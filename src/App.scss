@@ -1,0 +1,88 @@
+
+
+.homeSection {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: fit-content;
+  padding: 2rem;
+  box-sizing: border-box;
+  justify-content: center;
+
+  .titleContainer {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    overflow: hidden;
+    gap: 0.5rem;
+  }
+
+  .title {
+    overflow: hidden;
+    font-size: 60px;
+    font-family: sans-serif;
+    color: white;
+    width: fit-content;
+
+    @media (max-width: 680px) {
+      font-size: 40px;
+    }
+    @media (max-width: 480px) {
+      font-size: 30px;
+    }
+    @media (max-width: 380px) {
+      font-size: 22px;
+    }
+  }
+  .title0 {
+    transform: translateY(200px);
+    animation: SlideIn 0.4s 3s forwards;
+  }
+  .title1 {
+    transform: translateY(200px);
+    animation: SlideIn 0.4s 3.1s forwards;
+  }
+  .title2 {
+    transform: translateY(200px);
+    animation: SlideIn 0.4s 3.2s forwards;
+  }
+  .title3 {
+    transform: translateY(200px);
+    animation: SlideIn 0.4s 3.3s forwards;
+  }
+  .title4 {
+    transform: translateY(200px);
+    animation: SlideIn 0.4s 3.4s forwards;
+  }
+
+  @keyframes SlideIn {
+    from {
+      transform: translateY(200);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+}
+
+canvas {
+  display: flex !important;
+  position: absolute !important;
+ top: 0;
+ z-index: -1;
+ width: 100vw !important;
+ height: 100vh !important;
+ opacity: 0;
+ background: #101010 !important;
+ animation: render3D 1.5s 2s forwards;
+}
+
+@keyframes render3D {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}

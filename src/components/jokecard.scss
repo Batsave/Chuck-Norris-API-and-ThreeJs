@@ -1,0 +1,62 @@
+.main-container {
+
+    height: fit-content;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.card {
+    display: flex;
+    background-color: #eaeaea;
+    border-radius: 0.6rem;
+    padding: 1em;
+    box-sizing: border-box;
+    max-width: 65ch;
+    
+    transform: translateY(200px);
+    animation: OpenBox 0.4s 3.5s forwards;
+    
+
+    @keyframes OpenBox {
+        from {
+          transform: translateY(200px);
+        }
+        to {
+          transform: translateY(0px);
+        }
+      }
+  }
+  
+  
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    h4 {
+        font-family: sans-serif;
+        font-size: 1em;
+      }
+
+    .button {
+        width: fit-content;
+        padding: 0.5em 1em;
+        font-family: sans-serif;
+        font-size: 1em;
+        border-radius: 0.6rem;
+        border: solid 1px #10101050;
+        box-sizing: border-box;
+
+        &:hover {
+            background-color: #d9d9d9;
+            transform: scale(0.95);
+        }
+        &:active {
+            background-color: #d9d9d9;
+            transform: scale(0.90);
+        }
+    }
+  }
+  
+
