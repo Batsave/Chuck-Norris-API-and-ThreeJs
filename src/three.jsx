@@ -3,9 +3,10 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import "./App.scss"
 
 export default function Render3D() {
+  let model;
   const loader = new GLTFLoader();
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(4, window.innerWidth / window.innerHeight, 0.6, 1000);
+  const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.6, 1000);
   const renderer = new THREE.WebGLRenderer();
 
 
@@ -16,16 +17,17 @@ export default function Render3D() {
     camera.updateProjectionMatrix();
     renderer.setSize(newWidth, newHeight);
     renderer.setClearColor( 0xffffff, 0);
+    
   }
 
   updateRendererSize();
 
   document.body.appendChild(renderer.domElement);
 
-  camera.position.z = 20;
-  camera.position.x = -0.2;
-  camera.position.y = 1.5;
-  let model;
+  camera.position.z = 2;
+  camera.position.x = 0;
+  camera.position.y = 1.2;
+  
 
   function loadModel() {
     loader.load('./3D/ChuckNorris.gltf', (gltf) => {
@@ -38,10 +40,10 @@ export default function Render3D() {
 
   function animate() {
     requestAnimationFrame(animate);
-
     if (model) {
-        model.rotation.y += 0.01;
+      model.rotation.y += 0.01;
     }
+   
 
     renderer.render(scene, camera);
   }
